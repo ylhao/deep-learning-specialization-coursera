@@ -10,3 +10,31 @@
 
 [课件、课后作业和其它资料](https://github.com/ylhao/deeplearning.ai)
 
+## 配置环境
+
+### 设置 pip 源
+
+设置源主要是为了接下来提升通过 pip 安装各种包的速度。
+
+```
+// 打开相关的配置文件
+vim ~/.pip/pip.conf
+
+// 写入以下内容
+ [global]
+ trusted-host=mirrors.aliyun.com
+ index-url=http://mirrors.aliyun.com/pypi/simple
+
+// 保存退出
+```
+
+### 创建虚拟环境
+
+```
+sudo pip install virtualenv
+virtualenv --no-site-packages --python=python3.5 venv
+source venv/bin/activate
+pip install numpy pandas matplotlib tensorflow=1.0.0
+deactivate
+```
+
